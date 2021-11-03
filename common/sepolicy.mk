@@ -15,21 +15,21 @@ BOARD_SEPOLICY_M4DEFS += board_excludes_fuseblk_sepolicy=true
 endif
 endif
 
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/arrow/sepolicy/common/public
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
+    device/exthm/sepolicy/common/public
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/arrow/sepolicy/common/private
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    device/exthm/sepolicy/common/private
 
 ifeq ($(TARGET_USES_PREBUILT_VENDOR_SEPOLICY), true)
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/arrow/sepolicy/common/dynamic \
-    device/arrow/sepolicy/common/system
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    device/exthm/sepolicy/common/dynamic \
+    device/exthm/sepolicy/common/system
 else
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    device/arrow/sepolicy/common/dynamic \
-    device/arrow/sepolicy/common/vendor
+    device/exthm/sepolicy/common/dynamic \
+    device/exthm/sepolicy/common/vendor
 endif
 
 # Selectively include legacy rules defined by the products
--include device/arrow/sepolicy/legacy-common/sepolicy.mk
+-include device/exthm/sepolicy/legacy-common/sepolicy.mk
